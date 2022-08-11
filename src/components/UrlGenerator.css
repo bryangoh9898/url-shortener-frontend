@@ -12,12 +12,13 @@
     height: 90%;
 }
 
-.test{
+.result-wrapper{
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
     background-color: #5c5b5b;
     padding: 12px;
     border-radius: 5px;
     color: white;
+    overflow-x: auto;
     width: 47%
 }
 
@@ -68,7 +69,7 @@ body.active-popUp {
         width: 50%
     }
 
-    .test{
+    .result-wrapper{
         width: 57%
     }
 
@@ -80,7 +81,7 @@ body.active-popUp {
         width: 60%
     }
 
-    .test{
+    .result-wrapper{
         width: 70%
     }
 
@@ -112,7 +113,7 @@ body.active-popUp {
         margin-bottom: 10px;
     }
     
-    .test{
+    .result-wrapper{
         width: 100%
     }
 }
