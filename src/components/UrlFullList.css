@@ -5,6 +5,13 @@
     display: flex;
 }
 
+.vertical2-wrapper{
+    list-style: none;
+    width: 60%;
+    height: 90%
+}
+
+
 .header-card{
     display: flex;
     justify-content: space-between;
@@ -16,15 +23,28 @@
     font-weight: bold;  
 }
 
-.vertical-wrapper{
-    list-style: none;
-    width: 70%;
-    height: 90%
-}
 
 .header-wrapper{
     width: 50%;
     margin-right: 2rem;
     justify-content: center;
     overflow-x: auto;
+}
+
+@media (max-width: 720px){ 
+
+.vertical2-wrapper{
+    list-style: none;
+    width: 80%;
+    height: 90%
+}
+
+}
+
+@media (max-width: 480px){
+    .vertical2-wrapper{
+        list-style: none;
+        width: 90%;
+        height: 90%
+    }
 }

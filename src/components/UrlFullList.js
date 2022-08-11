@@ -3,10 +3,13 @@ import { useEffect, useState } from 'react';
 import URLItem from './URLItem';
 import Card from '../UI/Card'
 import './UrlFullList.css'
+
 function UrlFullList(){
     const [urlInfo, setUrlInfo] = useState();
 
-    const BASE_URL = "https://localhost:5000"
+    // const BASE_URL = "http://localhost:5000"
+    const BASE_URL = "https://url-backend1.herokuapp.com";
+
 
     useEffect(() => {
         getUrlInfo();
@@ -19,7 +22,7 @@ function UrlFullList(){
     function getUrlInfo(){
         //API call to fetch everything 
         //Fetch num of total document count - To determine how many pages for tthe reult to use in pagination
-        fetch("http://localhost:5000/url/short" , {
+        fetch( BASE_URL + "/url/short" , {
         method: "GET",
         headers: {
             "accept": "application/json",
@@ -40,24 +43,24 @@ function UrlFullList(){
 
     return( 
         <div className = "container">
- 
-            {
-                urlInfo &&  
-                <ul className = "vertical-wrapper">
-                    <li>
+            <ul className = "vertical2-wrapper">
+            <li>
                         <Card className = "header-card">
                         <div className = "header-wrapper">Full URL</div>
                         <div className = "header-wrapper">Shortened URL</div>
                         </Card>
-                    </li>
+            </li>
+            {
+                urlInfo &&  <li>
                     {       
                         urlInfo.map(urlInfo => (
                             <URLItem key = {urlInfo.short} shortUrl = {urlInfo.short} fullUrl = {urlInfo.fullUrl}></URLItem>
                         ))
     
                     }
-                </ul>
+                    </li>
             }
+            </ul>
                
         </div>
  

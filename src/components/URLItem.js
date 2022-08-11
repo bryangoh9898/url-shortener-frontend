@@ -8,7 +8,7 @@ function URLItem(props){
         <li>
         <Card className = "url-item">
             <div className = "column-wrapper">
-            <a className = "links" href = {props.fullUrl} target = "_blank">{props.fullUrl}</a>
+            {props.fullUrl}
             </div>
             <div className = "column-wrapper">
             <a className = "links" href = {props.shortUrl} target = "_blank">{props.shortUrl}</a>
