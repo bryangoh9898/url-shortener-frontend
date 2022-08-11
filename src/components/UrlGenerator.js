@@ -97,7 +97,7 @@ function UrlGenerator(){
                 }
                 {shortenedUrl && 
                 <li className = "list-wrapper">
-                    <div className = "test">
+                    <div className = "result-wrapper">
                     <div className = "test-full">Full Url: {showFullUrl}</div>
                     <div> Shortened URL: 
                     <a className = "short-full" style = {{marginLeft : "10px", color: "#0236b9"}} href = {shortenedUrl} target = "_blank">{shortenedUrl}</a>
