@@ -10,7 +10,6 @@ function UrlGenerator(){
     const [showFullUrl, setShowFullUrl] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const [test, setTest] = useState(false);
     // const BASE_URL = "http://localhost:5000";
     const BASE_URL = "https://url-backend1.herokuapp.com";
 
@@ -21,7 +20,6 @@ function UrlGenerator(){
     const handleLoading = value => {
         setLoading(value)
     }
-
 
     const handleShortenedUrl = value => {
         setShortenedUrl(value);
@@ -99,8 +97,15 @@ function UrlGenerator(){
                 }
                 {shortenedUrl && 
                 <li className = "list-wrapper">
-                    <div className = "space-wrapper">{showFullUrl}</div>
-                    <a className = "link-wrapper" href = {shortenedUrl} target = "_blank">{shortenedUrl}</a>
+                    <div className = "test">
+                    <div className = "test-full">Full Url: {showFullUrl}</div>
+                    <div> Shortened URL: 
+                    <a className = "short-full" style = {{marginLeft : "10px", color: "#0236b9"}} href = {shortenedUrl} target = "_blank">{shortenedUrl}</a>
+                    </div>
+                    </div>
+                    {/* <div className = "space-wrapper">{showFullUrl}</div>
+                    <a className = "link-wrapper" href = {shortenedUrl} target = "_blank">{shortenedUrl}</a> */}
+                 
                 </li>
                 }
                 {errorMsg &&

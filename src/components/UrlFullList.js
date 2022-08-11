@@ -3,13 +3,19 @@ import { useEffect, useState } from 'react';
 import URLItem from './URLItem';
 import Card from '../UI/Card'
 import './UrlFullList.css'
+import { TailSpin } from  'react-loader-spinner'
 
 function UrlFullList(){
     const [urlInfo, setUrlInfo] = useState();
+    const [loading, setLoading] = useState(false);
 
     // const BASE_URL = "http://localhost:5000"
     const BASE_URL = "https://url-backend1.herokuapp.com";
 
+
+    const handleLoading = value => {
+        setLoading(value)
+    }
 
     useEffect(() => {
         getUrlInfo();
@@ -22,6 +28,7 @@ function UrlFullList(){
     function getUrlInfo(){
         //API call to fetch everything 
         //Fetch num of total document count - To determine how many pages for tthe reult to use in pagination
+        handleLoading(true);
         fetch( BASE_URL + "/url/short" , {
         method: "GET",
         headers: {
@@ -32,6 +39,7 @@ function UrlFullList(){
             console.log(res)
             return res.json();
         }).then(data => {
+            handleLoading(false);
             console.log(data)
             handleUrlInfo(data)
             return
@@ -39,6 +47,13 @@ function UrlFullList(){
 
     }
 
+
+    if(loading){
+        document.body.classList.add('active-popUp')
+    }
+    else{
+        document.body.classList.remove('active-popUp')
+    }
 
 
     return( 
@@ -58,6 +73,18 @@ function UrlFullList(){
                         ))
     
                     }
+                    </li>
+            }
+
+            {
+                loading && <li style = {{  justifyContent: "center",display:"flex"}}>
+                <TailSpin
+                    height = "80"
+                    width = "80"
+                    radius = "9"
+                    color = 'blue'
+                    ariaLabel = 'three-dots-loading'     
+                    /> 
                     </li>
             }
             </ul>
