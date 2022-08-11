@@ -1,0 +1,30 @@
+.container{
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.header-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: white;
+    color: black;
+    font-weight: bold;  
+}
+
+.vertical-wrapper{
+    list-style: none;
+    width: 70%;
+    height: 90%
+}
+
+.header-wrapper{
+    width: 50%;
+    margin-right: 2rem;
+    justify-content: center;
+    overflow-x: auto;
+}
