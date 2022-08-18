@@ -5,7 +5,6 @@ import './URLItem.css'
 function URLItem(props){
 
     return( 
-        <li>
         <Card className = "url-item">
             <div className = "column-wrapper">
             {props.fullUrl}
@@ -14,7 +13,6 @@ function URLItem(props){
             <a className = "links" href = {props.shortUrl} target = "_blank">{props.shortUrl}</a>
             </div>
         </Card>
-        </li>
     )
 }
 

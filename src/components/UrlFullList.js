@@ -9,8 +9,8 @@ function UrlFullList(){
     const [urlInfo, setUrlInfo] = useState();
     const [loading, setLoading] = useState(false);
 
-    // const BASE_URL = "http://localhost:5000"
-    const BASE_URL = "https://url-backend1.herokuapp.com";
+    const BASE_URL = "http://localhost:5000"
+    //const BASE_URL = "https://url-backend1.herokuapp.com";
 
 
     const handleLoading = value => {
@@ -48,12 +48,12 @@ function UrlFullList(){
     }
 
 
-    if(loading){
-        document.body.classList.add('active-popUp')
-    }
-    else{
-        document.body.classList.remove('active-popUp')
-    }
+    // if(loading){
+    //     document.body.classList.add('active-popUp')
+    // }
+    // else{
+    //     document.body.classList.remove('active-popUp')
+    // }
 
 
     return( 
