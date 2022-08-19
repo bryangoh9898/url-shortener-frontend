@@ -9,14 +9,15 @@ function UrlFullList(){
     const [urlInfo, setUrlInfo] = useState();
     const [loading, setLoading] = useState(false);
 
-    // const BASE_URL = "http://localhost:5000"
-    const BASE_URL = "https://url-backend1.herokuapp.com";
+    const BASE_URL = "http://localhost:5000"
+    //const BASE_URL = "https://url-backend1.herokuapp.com";
 
 
     const handleLoading = value => {
         setLoading(value)
     }
 
+    //Initial Mount, getUrlInfo() is called 
     useEffect(() => {
         getUrlInfo();
     }, [])
@@ -48,12 +49,12 @@ function UrlFullList(){
     }
 
 
-    if(loading){
-        document.body.classList.add('active-popUp')
-    }
-    else{
-        document.body.classList.remove('active-popUp')
-    }
+    // if(loading){
+    //     document.body.classList.add('active-popUp')
+    // }
+    // else{
+    //     document.body.classList.remove('active-popUp')
+    // }
 
 
     return( 
@@ -69,7 +70,7 @@ function UrlFullList(){
                 urlInfo &&  <li>
                     {       
                         urlInfo.map(urlInfo => (
-                            <URLItem key = {urlInfo.short} shortUrl = {urlInfo.short} fullUrl = {urlInfo.fullUrl}></URLItem>
+                            <URLItem key = {urlInfo.short} shortUrl = {urlInfo.short} fullUrl = {urlInfo.fullUrl} clicks = {urlInfo.clicks} getUrlInfo = {getUrlInfo}></URLItem>
                         ))
     
                     }

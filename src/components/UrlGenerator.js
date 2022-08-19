@@ -10,8 +10,8 @@ function UrlGenerator(){
     const [showFullUrl, setShowFullUrl] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // const BASE_URL = "http://localhost:5000";
-    const BASE_URL = "https://url-backend1.herokuapp.com";
+    const BASE_URL = "http://localhost:5000";
+    //const BASE_URL = "https://url-backend1.herokuapp.com";
 
     const handleFullUrl = event => {
         setFullUrl(event.target.value);
@@ -55,8 +55,9 @@ function UrlGenerator(){
                     })
                 }
                 else{
+                    console.log("There's some error here")
                     res.json().then((data) => {
-                        handleErrorMsg(data["error"]);
+                        handleErrorMsg("Invalid URL Provided!");
                         handleShortenedUrl('');
                     })
                 }
@@ -65,12 +66,12 @@ function UrlGenerator(){
     }
 
 
-    if(loading){
-        document.body.classList.add('active-popUp')
-    }
-    else{
-        document.body.classList.remove('active-popUp')
-    }
+    // if(loading){
+    //     document.body.classList.add('active-popUp')
+    // }
+    // else{
+    //     document.body.classList.remove('active-popUp')
+    // }
 
     return(
 
