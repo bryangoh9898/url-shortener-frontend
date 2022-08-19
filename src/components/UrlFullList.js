@@ -17,6 +17,7 @@ function UrlFullList(){
         setLoading(value)
     }
 
+    //Initial Mount, getUrlInfo() is called 
     useEffect(() => {
         getUrlInfo();
     }, [])
@@ -69,7 +70,7 @@ function UrlFullList(){
                 urlInfo &&  <li>
                     {       
                         urlInfo.map(urlInfo => (
-                            <URLItem key = {urlInfo.short} shortUrl = {urlInfo.short} fullUrl = {urlInfo.fullUrl}></URLItem>
+                            <URLItem key = {urlInfo.short} shortUrl = {urlInfo.short} fullUrl = {urlInfo.fullUrl} clicks = {urlInfo.clicks} getUrlInfo = {getUrlInfo}></URLItem>
                         ))
     
                     }
